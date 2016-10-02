@@ -162,8 +162,7 @@ def main():
         comparables_perf_a = data.performances
 
         if data.comparison_with in ('boundary_profiles', 'central_profiles'):
-            # central_profiles is a dict, so we need to get the keys
-            comparables_b = [i for i in data.categories_profiles]
+            comparables_b = data.categories_profiles
             comparables_perf_b = data.profiles_performance_table
         else:
             comparables_b = data.alternatives
