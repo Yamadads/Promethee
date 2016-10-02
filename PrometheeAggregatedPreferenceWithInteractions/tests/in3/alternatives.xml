@@ -1,0 +1,12 @@
+<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <alternatives>
+    <alternative id="RER" />
+    <alternative id="MET_1" />
+    <alternative id="MET_2" />
+    <alternative id="BUS" />
+    <alternative id="TAXI" />
+    <alternative id="SNCF" />
+  </alternatives>
+
+</xmcda:XMCDA>
