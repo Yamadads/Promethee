@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.1.0">
+  <criteria>
+    <criterion id="c01" name="price">
+      <scale>
+        <quantitative>
+          <preferenceDirection>min</preferenceDirection>
+        </quantitative>
+      </scale>
+      <thresholds>
+        <threshold mcdaConcept="indifference">
+          <linear>
+            <slope><real>0.3</real></slope>
+            <intercept><real>0.0</real></intercept>
+          </linear>
+        </threshold>
+        <threshold mcdaConcept="preference">
+          <linear>
+            <slope><real>0.4</real></slope>
+            <intercept><real>0.0</real></intercept>
+          </linear>
+        </threshold>
+        <threshold mcdaConcept="veto">
+          <linear>
+            <slope><real>0.5</real></slope>
+            <intercept><real>0.0</real></intercept>
+          </linear>
+        </threshold>
+      </thresholds>
+    </criterion>
+    <criterion id="c02" name="time">
+      <scale>
+        <quantitative>
+          <preferenceDirection>min</preferenceDirection>
+        </quantitative>
+      </scale>
+      <thresholds>
+        <threshold mcdaConcept="indifference">
+          <linear>
+            <slope><real>0.3</real></slope>
+            <intercept><real>0.0</real></intercept>
+          </linear>
+        </threshold>
+        <threshold mcdaConcept="preference">
+          <linear>
+            <slope><real>0.4</real></slope>
+            <intercept><real>0.0</real></intercept>
+          </linear>
+        </threshold>
+        <threshold mcdaConcept="veto">
+          <linear>
+            <slope><real>0.5</real></slope>
+            <intercept><real>0.0</real></intercept>
+          </linear>
+        </threshold>
+      </thresholds>
+    </criterion>
+    <criterion id="c03" name="comfort">
+      <scale>
+        <quantitative>
+          <preferenceDirection>max</preferenceDirection>
+        </quantitative>
+      </scale>
+      <thresholds>
+        <threshold mcdaConcept="indifference">
+          <linear>
+            <slope><real>0.0</real></slope>
+            <intercept><real>0.0</real></intercept>
+          </linear>
+        </threshold>
+        <threshold mcdaConcept="preference">
+          <linear>
+            <slope><real>0.0</real></slope>
+            <intercept><real>1.0</real></intercept>
+          </linear>
+        </threshold>
+        <threshold mcdaConcept="veto">
+          <linear>
+            <slope><real>0.0</real></slope>
+            <intercept><real>2.0</real></intercept>
+          </linear>
+        </threshold>
+      </thresholds>
+    </criterion>
+  </criteria>
+</xmcda:XMCDA>
