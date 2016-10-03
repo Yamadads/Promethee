@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xmcda:XMCDA xmlns:xmcda='http://www.decision-deck.org/2009/XMCDA-2.1.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.decision-deck.org/2009/XMCDA-2.1.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.1.0.xsd'>
+    <criteria>
+        <criterion id="g1" name="slope">
+            <active>true</active>
+            <scale>
+                <quantitative>
+                    <preferenceDirection>min</preferenceDirection>
+                </quantitative>
+            </scale>
+            <thresholds>
+                <threshold mcdaConcept="indifference">
+                    <constant>
+                        <real>2.0</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="preference">
+                    <constant>
+                        <real>10.0</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="veto">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+            </thresholds>
+        </criterion>
+
+        <criterion id="g2" name="connectivity">
+            <active>true</active>
+            <scale>
+                <quantitative>
+                    <preferenceDirection>min</preferenceDirection>
+                </quantitative>
+            </scale>
+            <thresholds>
+                <threshold mcdaConcept="indifference">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="preference">
+                    <constant>
+                        <real>1.9</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="veto">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+            </thresholds>
+        </criterion>
+
+        <criterion id="g3" name="embankment">
+            <active>true</active>
+            <scale>
+                <quantitative>
+                    <preferenceDirection>min</preferenceDirection>
+                </quantitative>
+            </scale>
+            <thresholds>
+                <threshold mcdaConcept="indifference">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="preference">
+                    <constant>
+                        <real>1.9</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="veto">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+            </thresholds>
+        </criterion>
+
+        <criterion id="g4" name="crop">
+            <active>true</active>
+            <scale>
+                <quantitative>
+                    <preferenceDirection>min</preferenceDirection>
+                </quantitative>
+            </scale>
+            <thresholds>
+                <threshold mcdaConcept="indifference">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="preference">
+                    <constant>
+                        <real>1.9</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="veto">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+            </thresholds>
+        </criterion>
+
+        <criterion id="g5" name="bank alteration">
+            <active>true</active>
+            <scale>
+                <quantitative>
+                    <preferenceDirection>min</preferenceDirection>
+                </quantitative>
+            </scale>
+            <thresholds>
+                <threshold mcdaConcept="indifference">
+                    <constant>
+                        <real>0.0</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="preference">
+                    <constant>
+                        <real>2.0</real>
+                    </constant>
+                </threshold>
+                <threshold mcdaConcept="veto">
+                    <constant>
+                        <real>3.9</real>
+                    </constant>
+                </threshold>
+            </thresholds>
+        </criterion>
+    </criteria>
+</xmcda:XMCDA>

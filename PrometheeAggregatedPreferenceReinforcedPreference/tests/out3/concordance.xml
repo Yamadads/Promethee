@@ -12,7 +12,7 @@
         <alternativeID>RER</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -23,7 +23,7 @@
         <alternativeID>MET_1</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.633333333333</real>
       </value>
     </pair>
     <pair>
@@ -34,7 +34,7 @@
         <alternativeID>MET_2</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -45,7 +45,7 @@
         <alternativeID>BUS</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -56,7 +56,7 @@
         <alternativeID>TAXI</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -67,7 +67,7 @@
         <alternativeID>SNCF</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -78,7 +78,7 @@
         <alternativeID>RER</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.7</real>
       </value>
     </pair>
     <pair>
@@ -89,7 +89,7 @@
         <alternativeID>MET_1</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -100,7 +100,7 @@
         <alternativeID>MET_2</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -111,7 +111,7 @@
         <alternativeID>BUS</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -122,7 +122,7 @@
         <alternativeID>TAXI</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -133,7 +133,7 @@
         <alternativeID>SNCF</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -144,7 +144,7 @@
         <alternativeID>RER</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -155,7 +155,7 @@
         <alternativeID>MET_1</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -166,7 +166,7 @@
         <alternativeID>MET_2</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -177,7 +177,7 @@
         <alternativeID>BUS</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.833333333333</real>
       </value>
     </pair>
     <pair>
@@ -188,7 +188,7 @@
         <alternativeID>TAXI</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -199,7 +199,7 @@
         <alternativeID>SNCF</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -210,7 +210,7 @@
         <alternativeID>RER</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -221,7 +221,7 @@
         <alternativeID>MET_1</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -232,7 +232,7 @@
         <alternativeID>MET_2</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.7</real>
       </value>
     </pair>
     <pair>
@@ -243,7 +243,7 @@
         <alternativeID>BUS</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -254,7 +254,7 @@
         <alternativeID>TAXI</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -265,7 +265,7 @@
         <alternativeID>SNCF</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -276,7 +276,7 @@
         <alternativeID>RER</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.2</real>
       </value>
     </pair>
     <pair>
@@ -287,7 +287,7 @@
         <alternativeID>MET_1</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.4</real>
       </value>
     </pair>
     <pair>
@@ -298,7 +298,7 @@
         <alternativeID>MET_2</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.4</real>
       </value>
     </pair>
     <pair>
@@ -309,7 +309,7 @@
         <alternativeID>BUS</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -320,7 +320,7 @@
         <alternativeID>TAXI</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -331,7 +331,7 @@
         <alternativeID>SNCF</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.4</real>
       </value>
     </pair>
     <pair>
@@ -342,7 +342,7 @@
         <alternativeID>RER</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.7</real>
       </value>
     </pair>
     <pair>
@@ -353,7 +353,7 @@
         <alternativeID>MET_1</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -364,7 +364,7 @@
         <alternativeID>MET_2</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -375,7 +375,7 @@
         <alternativeID>BUS</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.5</real>
       </value>
     </pair>
     <pair>
@@ -386,7 +386,7 @@
         <alternativeID>TAXI</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>0.8</real>
       </value>
     </pair>
     <pair>
@@ -397,7 +397,7 @@
         <alternativeID>SNCF</alternativeID>
       </terminal>
       <value>
-        <real>0.0</real>
+        <real>1.0</real>
       </value>
     </pair>
   </pairs>

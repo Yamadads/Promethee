@@ -614,6 +614,7 @@ def get_input_data(input_dir, filenames, params, **kwargs):
             profiles_performance_table = None
         return profiles_performance_table  # NoneType, dict
 
+    #use
     def get_reinforcement_factors(*args, **kwargs):
         criteria = px.getCriteriaID(trees['criteria'])
         factors = {}
@@ -664,7 +665,12 @@ def get_input_data(input_dir, filenames, params, **kwargs):
         return param
 
     #use
-    def get_generalised_criteria(*args, **kwargs):
+    def get_generalised_criteria(with_gaussian, *args, **kwargs):
+        function_ID_set = ('1','2','3','4','5')
+        function_ID_set_int = {1,2,3,4,5}
+        if with_gaussian:
+            function_ID_set = ('1','2','3','4','5','6')
+            function_ID_set_int = {1,2,3,4,5,6}
         generalised_param = get_param_string("generalised_criterion", *args, **kwargs)
         if generalised_param in ('specified'):
             criteria = px.getCriteriaID(trees['criteria'])
@@ -675,12 +681,14 @@ def get_input_data(input_dir, filenames, params, **kwargs):
                     c,
                     'generalised_criterion'
                 )
-                if gc.get(c) not in {1,2,3,4,5,6}:
-                    msg = ("Generalised criterion should be iteger value between 1 and 6).")
+                if gc.get(c) not in function_ID_set_int:
+                    msg = ("Generalised criterion should be iteger value between 1 and 5).")
+                    if with_gaussian:
+                        msg = ("Generalised criterion should be iteger value between 1 and 6).")
                     raise InputDataError(msg)
                 factors.update(gc)
         else:
-            if generalised_param in ('1','2','3','4','5','6'):
+            if generalised_param in function_ID_set:
                 criteria = px.getCriteriaID(trees['criteria'])
                 factors={}
                 for c in criteria:
@@ -690,6 +698,12 @@ def get_input_data(input_dir, filenames, params, **kwargs):
             else:
                 factors = None;
         return factors  # dict
+    #use
+    def get_generalised_criteria_with_gaussian(*args, **kwargs):
+        return get_generalised_criteria(True, *args, **kwargs)
+    #use
+    def get_generalised_criteria_without_gaussian(*args, **kwargs):
+        return get_generalised_criteria(False, *args, **kwargs)
 
     _functions_dict = {
         'alternatives': get_alternatives,
@@ -716,7 +730,8 @@ def get_input_data(input_dir, filenames, params, **kwargs):
         'use_partials': partial(get_param_boolean, 'use_partials'),
         'use_pre_veto': partial(get_param_boolean, 'use_pre_veto'),
         'z_function': partial(get_param_string, 'z_function'),
-        'generalised_criteria': get_generalised_criteria,
+        'generalised_criteria': get_generalised_criteria_with_gaussian,
+        'generalised_criteria_without_gaussian': get_generalised_criteria_without_gaussian,
     }
 
     args = (input_dir, filenames, params)

@@ -1,7 +1,7 @@
 #!../promethee python
 
 """
-PrometheeAggregatedPreference - computes aggregated preference indices taking into
+PrometheeAggregatedPreferenceWithInteractions - computes aggregated preference indices taking into
 account interactions between criteria. Possible interactions are:
 'strengthening', 'weakening' and 'antagonistic
 
@@ -111,25 +111,21 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
 
     def preference_on_one_criterion(ga,gb,pref_direction,functionNo, threshold):
         preference_function = generalised_criteria_function[functionNo];
+
         _get_linear = partial(get_linear, pref_direction, ga, gb)
         preference_treshold = _get_linear(threshold.get('preference', 0))
         indifference_treshold = _get_linear(threshold.get('indifference', 0))
         sigma_treshold = _get_linear(threshold.get('sigma', 0))
-        if (pref_direction=="max"):
-            difference_between_evaulations = ga - gb
-            return preference_function(
-                difference_between_evaulations,
-                preference_treshold,
-                indifference_treshold,
-                sigma_treshold);
-        if (pref_direction=="min"):
-            difference_between_evaulations = gb - ga
-            return preference_function(
-                difference_between_evaulations,
-                preference_treshold,
-                indifference_treshold,
-                sigma_treshold);
-        raise InputDataError("Unknown preference direction specified.")
+
+        difference_between_evaulations = get_difference_between_evaluations(pref_directions, ga, gb)
+
+        calculated_preference = preference_function(
+                                    difference_between_evaulations,
+                                    preference_treshold,
+                                    indifference_treshold,
+                                    sigma_treshold);
+
+        return calculated_preference
 
     def get_partial_preferences(comp_a, comp_b, comp_perf_a, comp_perf_b, criteria, gen_criteria, pref_dir, thresholds, two_way_comp):
         partial_preferences = Vividict()
