@@ -20,7 +20,7 @@ INPUT_DATA_ERROR_HINT = ("Please check if the contents of this file matches "
                          "the method parameters that you've specified.")
 
 THRESHOLDS = ['indifference', 'preference', 'veto', 'reinforced_preference',
-              'counter_veto', 'pre_veto']
+              'counter_veto', 'pre_veto', 'sigma']
 
 THRESHOLDS_OLD_TO_NEW = {'ind': 'indifference', 'pref': 'preference'}
 
@@ -685,18 +685,17 @@ def get_input_data(input_dir, filenames, params, **kwargs):
         if generalised_param in ('specified'):
             criteria = px.getCriteriaID(trees['criteria'])
             factors = {}
+            gc = px.getCriterionValue(
+                    trees['generalised_criteria'],
+                    criteria,
+                    'generalised_criteria')
             for c in criteria:
-                gc = px.getCriterionValue(
-                    trees['generalised_criterion'],
-                    c,
-                    'generalised_criterion'
-                )
                 if gc.get(c) not in function_ID_set_int:
                     msg = ("Generalised criterion should be iteger value between 1 and 5).")
                     if with_gaussian:
                         msg = ("Generalised criterion should be iteger value between 1 and 6).")
                     raise InputDataError(msg)
-                factors.update(gc)
+            factors = gc
         else:
             if generalised_param in function_ID_set:
                 criteria = px.getCriteriaID(trees['criteria'])

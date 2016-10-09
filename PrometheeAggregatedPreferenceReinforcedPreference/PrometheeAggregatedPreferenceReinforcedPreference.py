@@ -90,7 +90,7 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
         indifference_threshold = _get_linear(threshold.get('indifference', 0))
         reinforced_threshold = _get_linear(threshold.get('reinforced_preference', 0))
 
-        difference_between_evaulations = get_difference_between_evaluations(pref_directions, ga, gb)
+        difference_between_evaulations = get_difference_between_evaluations(pref_direction, ga, gb)
 
         crossed = False
         if reinforced_threshold is not None \

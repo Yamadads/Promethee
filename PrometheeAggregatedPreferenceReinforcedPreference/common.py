@@ -20,7 +20,7 @@ INPUT_DATA_ERROR_HINT = ("Please check if the contents of this file matches "
                          "the method parameters that you've specified.")
 
 THRESHOLDS = ['indifference', 'preference', 'veto', 'reinforced_preference',
-              'counter_veto', 'pre_veto']
+              'counter_veto', 'pre_veto', 'sigma']
 
 THRESHOLDS_OLD_TO_NEW = {'ind': 'indifference', 'pref': 'preference'}
 
@@ -665,6 +665,16 @@ def get_input_data(input_dir, filenames, params, **kwargs):
         return param
 
     #use
+    def get_param_real(param_name, *args, **kwargs):
+        param = px.getParameterByName(trees['method_parameters'], param_name)
+        return float(param)
+
+    #use
+    def get_param_integer(param_name, *args, **kwargs):
+        param = px.getParameterByName(trees['method_parameters'], param_name)
+        return int(param)
+
+    #use
     def get_generalised_criteria(with_gaussian, *args, **kwargs):
         function_ID_set = ('1','2','3','4','5')
         function_ID_set_int = {1,2,3,4,5}
@@ -675,18 +685,17 @@ def get_input_data(input_dir, filenames, params, **kwargs):
         if generalised_param in ('specified'):
             criteria = px.getCriteriaID(trees['criteria'])
             factors = {}
+            gc = px.getCriterionValue(
+                    trees['generalised_criteria'],
+                    criteria,
+                    'generalised_criteria')
             for c in criteria:
-                gc = px.getCriterionValue(
-                    trees['generalised_criterion'],
-                    c,
-                    'generalised_criterion'
-                )
                 if gc.get(c) not in function_ID_set_int:
                     msg = ("Generalised criterion should be iteger value between 1 and 5).")
                     if with_gaussian:
                         msg = ("Generalised criterion should be iteger value between 1 and 6).")
                     raise InputDataError(msg)
-                factors.update(gc)
+            factors = gc
         else:
             if generalised_param in function_ID_set:
                 criteria = px.getCriteriaID(trees['criteria'])
@@ -704,6 +713,18 @@ def get_input_data(input_dir, filenames, params, **kwargs):
     #use
     def get_generalised_criteria_without_gaussian(*args, **kwargs):
         return get_generalised_criteria(False, *args, **kwargs)
+
+    # use
+    def get_criteria_ranking(*args, **kwargs):
+        criteria = px.getCriteriaID(trees['criteria'])
+        if len(criteria) == 0:
+            msg = (
+                "File 'criteria.xml' doesn't contain valid data for this "
+                "method."
+            )
+            raise InputDataError(msg)
+        ranking = px.getCriterionValue(trees['criteria_ranking'], criteria)
+        return ranking  # dict
 
     _functions_dict = {
         'alternatives': get_alternatives,
@@ -732,6 +753,9 @@ def get_input_data(input_dir, filenames, params, **kwargs):
         'z_function': partial(get_param_string, 'z_function'),
         'generalised_criteria': get_generalised_criteria_with_gaussian,
         'generalised_criteria_without_gaussian': get_generalised_criteria_without_gaussian,
+        'criteria_ranking': get_criteria_ranking,
+        'criteria_weight_ratio': partial(get_param_real, 'criteria_weight_ratio'),
+        'decimal_places': partial(get_param_integer, 'decimal_places')
     }
 
     args = (input_dir, filenames, params)
@@ -904,6 +928,19 @@ def assignments_as_intervals_to_xmcda(assignments):
         category_id = etree.SubElement(upper_bound, 'categoryID')
         category_id.text = assignment[1][1]
     return xmcda
+
+#use
+def weights_to_xmcda(weights, mcda_concept):
+    xmcda = etree.Element('criteriaValues',mcdaConcept=mcda_concept)
+    for weight in sorted(weights.items(), key=lambda x: x[0]):
+        criterion_weight = etree.SubElement(xmcda, 'criterionValue')
+        criterion_weight_id = etree.SubElement(criterion_weight, 'criterionID')
+        criterion_weight_id.text = weight[0]
+        criterion_weight_value = etree.SubElement(criterion_weight, 'value')
+        criterion_weight_real = etree.SubElement(criterion_weight_value, 'real')
+        criterion_weight_real.text = str(weight[1])
+    return xmcda
+
 
 
 ###############################################################################

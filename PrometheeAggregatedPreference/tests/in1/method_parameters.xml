@@ -9,6 +9,11 @@
       <label>boundary_profiles</label>
     </value>
   </parameter>
+  <parameter name="generalised_criterion">
+    <value>
+      <label>1</label>
+    </value>
+  </parameter>
 </methodParameters>
 
 </xmcda:XMCDA>

@@ -11,7 +11,7 @@
   </parameter>
   <parameter name="generalised_criterion">
     <value>
-      <label>2</label>
+      <label>specified</label>
     </value>
   </parameter>
 </methodParameters>

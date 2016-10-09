@@ -81,14 +81,11 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
 
     def preference_on_one_criterion(ga,gb,pref_direction,functionNo, threshold):
         preference_function = generalised_criteria_function[functionNo];
-
         _get_linear = partial(get_linear, pref_direction, ga, gb)
         preference_treshold = _get_linear(threshold.get('preference', 0))
         indifference_treshold = _get_linear(threshold.get('indifference', 0))
         sigma_treshold = _get_linear(threshold.get('sigma', 0))
-
-        difference_between_evaulations = get_difference_between_evaluations(pref_directions, ga, gb)
-
+        difference_between_evaulations = get_difference_between_evaluations(pref_direction, ga, gb)
         calculated_preference = preference_function(
                                     difference_between_evaulations,
                                     preference_treshold,
@@ -174,7 +171,6 @@ def main():
                                         data.thresholds,
                                         data.pref_directions,
                                         data.weights)
-
         finalize(data, comparables_a, comparables_b, aggregated_preferences, output_dir)
 
         return 0

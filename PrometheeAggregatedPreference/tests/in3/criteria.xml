@@ -20,7 +20,7 @@
             <intercept><real>0.0</real></intercept>
           </linear>
         </threshold>
-        <threshold mcdaConcept="veto">
+        <threshold mcdaConcept="sigma">
           <linear>
             <slope><real>0.5</real></slope>
             <intercept><real>0.0</real></intercept>
@@ -47,7 +47,7 @@
             <intercept><real>0.0</real></intercept>
           </linear>
         </threshold>
-        <threshold mcdaConcept="veto">
+        <threshold mcdaConcept="sigma">
           <linear>
             <slope><real>0.5</real></slope>
             <intercept><real>0.0</real></intercept>
@@ -74,7 +74,7 @@
             <intercept><real>1.0</real></intercept>
           </linear>
         </threshold>
-        <threshold mcdaConcept="veto">
+        <threshold mcdaConcept="sigma">
           <linear>
             <slope><real>0.0</real></slope>
             <intercept><real>2.0</real></intercept>
