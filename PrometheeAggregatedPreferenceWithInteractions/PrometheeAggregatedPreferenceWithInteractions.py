@@ -73,6 +73,13 @@ params = [
     'z_function',
 ]
 
+def get_normalized_weights(weights):
+    normalized_weights = {}
+    sum_of_weights = sum(weights.values())
+    for i in weights:
+        normalized_weights[i] = weights[i]/sum_of_weights
+    return normalized_weights
+
 def get_aggregated_preference_indices(comparables_a, comparables_perf_a, comparables_b,
                     comparables_perf_b, criteria, generalised_criteria, thresholds, pref_directions,
                     weights, interactions, z_function):
@@ -117,14 +124,12 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
         indifference_treshold = _get_linear(threshold.get('indifference', 0))
         sigma_treshold = _get_linear(threshold.get('sigma', 0))
 
-        difference_between_evaulations = get_difference_between_evaluations(pref_directions, ga, gb)
-
+        difference_between_evaulations = get_difference_between_evaluations(pref_direction, ga, gb)
         calculated_preference = preference_function(
                                     difference_between_evaulations,
                                     preference_treshold,
                                     indifference_treshold,
                                     sigma_treshold);
-
         return calculated_preference
 
     def get_partial_preferences(comp_a, comp_b, comp_perf_a, comp_perf_b, criteria, gen_criteria, pref_dir, thresholds, two_way_comp):
@@ -146,10 +151,10 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
                                 pref_dir[c],
                                 gen_criteria[c],
                                 thresholds[c])
+                        partial_preferences[b][a][c] = pp
         return partial_preferences
 
     def get_aggregated_preference(a,b, part_preference, criteria, weights, Z_function, interactions):
-        print(part_preference)
         if a==b:
             aggregated_preference = 1.0
         else:
@@ -164,9 +169,6 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
             for interaction in interactions.get('antagonistic', []):
                 ci = part_preference[a][b][interaction[0]]
                 cj = part_preference[b][a][interaction[1]]
-                print(interaction[2])
-                print(ci)
-                print(cj)
                 sum_kih += Z_function(ci, cj) * interaction[2]
             sum_ki = sum(weights.values())
             K = sum_ki + sum_kij - sum_kih
@@ -232,9 +234,9 @@ def main():
         input_dir, output_dir = get_dirs(args)
 
         data = get_input_data(input_dir, filenames, params)
-        print (data.interactions)
         comparables_a = data.alternatives
         comparables_perf_a = data.performances
+        normalized_weights = get_normalized_weights(data.weights)
 
         if data.comparison_with in ('boundary_profiles', 'central_profiles'):
             # central_profiles is a dict, so we need to get the keys
@@ -253,7 +255,7 @@ def main():
                                         data.generalised_criteria,
                                         data.thresholds,
                                         data.pref_directions,
-                                        data.weights,
+                                        normalized_weights,
                                         data.interactions,
                                         data.z_function)
 

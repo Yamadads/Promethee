@@ -70,6 +70,13 @@ params = [
     'generalised_criteria_without_gaussian',
 ]
 
+def get_normalized_weights(weights):
+    normalized_weights = {}
+    sum_of_weights = sum(weights.values())
+    for i in weights:
+        normalized_weights[i] = weights[i]/sum_of_weights
+    return normalized_weights
+
 def get_aggregated_preference_indices(comparables_a, comparables_perf_a, comparables_b,
                     comparables_perf_b, criteria, generalised_criteria, thresholds, pref_directions,
                     weights, reinforcement_factors):
@@ -186,6 +193,7 @@ def main():
 
         comparables_a = data.alternatives
         comparables_perf_a = data.performances
+        normalized_weights = get_normalized_weights(data.weights)
 
         if data.comparison_with in ('boundary_profiles', 'central_profiles'):
             comparables_b = data.categories_profiles
@@ -203,7 +211,7 @@ def main():
                                         data.generalised_criteria_without_gaussian,
                                         data.thresholds,
                                         data.pref_directions,
-                                        data.weights,
+                                        normalized_weights,
                                         data.reinforcement_factors)
 
         finalize(data, comparables_a, comparables_b, aggregated_preferences, output_dir)

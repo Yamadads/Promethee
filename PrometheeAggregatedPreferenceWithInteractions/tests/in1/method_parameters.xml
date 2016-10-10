@@ -10,7 +10,7 @@
   </parameter>
   <parameter name="generalised_criterion">
     <value>
-      <label>1</label>
+      <label>specified</label>
     </value>
   </parameter>
   <parameter name="z_function">
