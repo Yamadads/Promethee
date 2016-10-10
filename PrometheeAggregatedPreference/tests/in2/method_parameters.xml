@@ -8,6 +8,11 @@
       <label>central_profiles</label>
     </value>
   </parameter>
+  <parameter name="generalised_criterion">
+    <value>
+      <label>specified</label>
+    </value>
+  </parameter>
 </methodParameters>
 
 </xmcda:XMCDA>

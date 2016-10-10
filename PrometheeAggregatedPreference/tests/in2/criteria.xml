@@ -21,7 +21,7 @@
                         <real>10.0</real>
                     </constant>
                 </threshold>
-                <threshold mcdaConcept="veto">
+                <threshold mcdaConcept="sigma">
                     <constant>
                         <real>0.0</real>
                     </constant>
@@ -47,7 +47,7 @@
                         <real>1.9</real>
                     </constant>
                 </threshold>
-                <threshold mcdaConcept="veto">
+                <threshold mcdaConcept="sigma">
                     <constant>
                         <real>0.0</real>
                     </constant>
@@ -73,7 +73,7 @@
                         <real>1.9</real>
                     </constant>
                 </threshold>
-                <threshold mcdaConcept="veto">
+                <threshold mcdaConcept="sigma">
                     <constant>
                         <real>0.0</real>
                     </constant>
@@ -99,7 +99,7 @@
                         <real>1.9</real>
                     </constant>
                 </threshold>
-                <threshold mcdaConcept="veto">
+                <threshold mcdaConcept="sigma">
                     <constant>
                         <real>0.0</real>
                     </constant>
@@ -125,7 +125,7 @@
                         <real>2.0</real>
                     </constant>
                 </threshold>
-                <threshold mcdaConcept="veto">
+                <threshold mcdaConcept="sigma">
                     <constant>
                         <real>3.9</real>
                     </constant>
