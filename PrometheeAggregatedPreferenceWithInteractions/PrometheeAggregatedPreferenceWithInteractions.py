@@ -149,6 +149,7 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
         return partial_preferences
 
     def get_aggregated_preference(a,b, part_preference, criteria, weights, Z_function, interactions):
+        print(part_preference)
         if a==b:
             aggregated_preference = 1.0
         else:
@@ -163,10 +164,13 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
             for interaction in interactions.get('antagonistic', []):
                 ci = part_preference[a][b][interaction[0]]
                 cj = part_preference[b][a][interaction[1]]
-                sum_kih +=Z_function(ci, cj) * interaction[2]
+                print(interaction[2])
+                print(ci)
+                print(cj)
+                sum_kih += Z_function(ci, cj) * interaction[2]
             sum_ki = sum(weights.values())
             K = sum_ki + sum_kij - sum_kih
-            aggregated_preference = (sum_cki + sum_kij - sum_kih)/K
+            aggregated_preference = (sum_cki + sum_kij - sum_kih) / K
         return aggregated_preference
 
     # some initial checks
@@ -228,7 +232,7 @@ def main():
         input_dir, output_dir = get_dirs(args)
 
         data = get_input_data(input_dir, filenames, params)
-
+        print (data.interactions)
         comparables_a = data.alternatives
         comparables_perf_a = data.performances
 

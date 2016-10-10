@@ -3,8 +3,20 @@
   xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
   xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
 <methodMessages>
+  <errorMessage>
+    <text><![CDATA[TypeError: unsupported operand type(s) for *: 'int' and 'Vividict']]></text>
+  </errorMessage>
   <logMessage>
-    <text><![CDATA[Everything OK.]]></text>
+    <text><![CDATA[Traceback (most recent call last):
+  File "PrometheeAggregatedPreferenceWithInteractions.py", line 258, in main
+    data.z_function)
+  File "PrometheeAggregatedPreferenceWithInteractions.py", line 203, in get_aggregated_preference_indices
+    interactions)
+  File "PrometheeAggregatedPreferenceWithInteractions.py", line 170, in get_aggregated_preference
+    sum_kih += Z_function(ci, cj) * interaction[2]
+  File "PrometheeAggregatedPreferenceWithInteractions.py", line 105, in <lambda>
+    Z = lambda x, y: x * y
+TypeError: unsupported operand type(s) for *: 'int' and 'Vividict']]></text>
   </logMessage>
 </methodMessages>
 </xmcda:XMCDA>
