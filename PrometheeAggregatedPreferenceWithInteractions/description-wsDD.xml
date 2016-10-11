@@ -3,7 +3,7 @@
   xsi:noNamespaceSchemaLocation="../../docs/w3-ws/specificationData/description.xsd">
   <program provider="PUT" name="PrometheeAggregatedPreferenceWithInteractions" displayName="PrometheeAggregatedPreferenceWithInteractions" version="0.2.0" />
   <documentation>
-    <description>PrometheeAggregatedPreference - computes aggregated preference indices taking into
+    <description>PrometheeAggregatedPreferenceWithInteractions - computes aggregated preference indices taking into
 account interactions between criteria. Possible interactions are:
 'strengthening', 'weakening' and 'antagonistic
 

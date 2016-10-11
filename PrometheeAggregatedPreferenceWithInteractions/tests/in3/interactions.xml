@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xmcda:XMCDA xmlns:xmcda='http://www.decision-deck.org/2009/XMCDA-2.1.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.decision-deck.org/2009/XMCDA-2.1.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.1.0.xsd'>
+<xmcda:XMCDA xmlns:xmcda='http://www.decision-deck.org/2012/XMCDA-2.2.1'
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.1.xsd'>
  <criteriaValues mcdaConcept="criteriaInteractions">
     <criterionValue mcdaConcept="antagonistic">
       <criteriaSet>
@@ -7,11 +9,11 @@
           <criterionID>c01</criterionID>
         </element>
         <element>
-          <criterionID>c02</criterionID>
+          <criterionID>c03</criterionID>
         </element>
       </criteriaSet>
       <value>
-        <real>2.5</real>
+        <real>0.2</real>
       </value>
     </criterionValue>
   </criteriaValues>

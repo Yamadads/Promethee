@@ -3,8 +3,18 @@
   xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
   xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
 <methodMessages>
+  <errorMessage>
+    <text><![CDATA[RuntimeError: Positive net balance condition is not fulfilled for criterion 'g1'.]]></text>
+  </errorMessage>
   <logMessage>
-    <text><![CDATA[Everything OK.]]></text>
+    <text><![CDATA[Traceback (most recent call last):
+  File "PrometheeAggregatedPreferenceWithInteractions.py", line 260, in main
+    data.z_function)
+  File "PrometheeAggregatedPreferenceWithInteractions.py", line 179, in get_aggregated_preference_indices
+    _check_net_balance(interactions, weights)
+  File "PrometheeAggregatedPreferenceWithInteractions.py", line 108, in _check_net_balance
+    .format(criterion))
+RuntimeError: Positive net balance condition is not fulfilled for criterion 'g1'.]]></text>
   </logMessage>
 </methodMessages>
 </xmcda:XMCDA>
