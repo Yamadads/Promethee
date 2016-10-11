@@ -168,7 +168,7 @@ def get_aggregated_preference_indices(comparables_a, comparables_perf_a, compara
             ap = get_aggregated_preference(a, b, rp_crossed, partial_preferences, criteria, weights)
             aggregated_preferences[a][b] = ap
             if two_way_comparison:
-                ap = get_aggregated_preference(b, a, rp_crossed)
+                ap = get_aggregated_preference(b, a, rp_crossed, partial_preferences, criteria, weights)
                 aggregated_preferences[b][a] = ap
     return aggregated_preferences
 
