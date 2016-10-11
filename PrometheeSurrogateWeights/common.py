@@ -755,7 +755,8 @@ def get_input_data(input_dir, filenames, params, **kwargs):
         'generalised_criteria_without_gaussian': get_generalised_criteria_without_gaussian,
         'criteria_ranking': get_criteria_ranking,
         'criteria_weight_ratio': partial(get_param_real, 'criteria_weight_ratio'),
-        'decimal_places': partial(get_param_integer, 'decimal_places')
+        'decimal_places': partial(get_param_integer, 'decimal_places'),
+        'method': partial(get_param_string, 'method')
     }
 
     args = (input_dir, filenames, params)

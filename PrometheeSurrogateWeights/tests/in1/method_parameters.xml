@@ -3,14 +3,9 @@
         xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
         xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.1.xsd'>
 <methodParameters>
-  <parameter name="criteria_weight_ratio">
+  <parameter name="method">
     <value>
-      <label>6.5</label>
-    </value>
-  </parameter>
-  <parameter name="decimal_places">
-    <value>
-      <label>1</label>
+      <label>equal_weights</label>
     </value>
   </parameter>
 </methodParameters>
