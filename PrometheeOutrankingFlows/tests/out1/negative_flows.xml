@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xmcda:XMCDA xmlns:xmcda='http://www.decision-deck.org/2012/XMCDA-2.2.1'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.1 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.1.xsd'>
+<alternativesValues mcdaConcept="alternatives_outranking_flows">
+  <alternativeValue>
+    <alternativeID>BUS</alternativeID>
+    <value>
+      <real>0.4375</real>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>MET_1</alternativeID>
+    <value>
+      <real>0.3025</real>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>MET_2</alternativeID>
+    <value>
+      <real>0.303333333333</real>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>RER</alternativeID>
+    <value>
+      <real>0.445</real>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>SNCF</alternativeID>
+    <value>
+      <real>0.35</real>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>TAXI</alternativeID>
+    <value>
+      <real>0.71</real>
+    </value>
+  </alternativeValue>
+</alternativesValues>
+</xmcda:XMCDA>
